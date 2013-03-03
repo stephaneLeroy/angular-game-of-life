@@ -1,6 +1,6 @@
 /**
  * Angular.js GameOfLife Controller
- * Author: Stephane LEROY
+ * Author: Stéphane LEROY
  * Twitter : @StphaneL
  * Date: 02/03/13
  * Time: 15:29
@@ -27,21 +27,18 @@ function GameOfLifeCtrl($scope, $timeout) {
     // Reset the world
     $scope.reset = function() {
         $scope.world = buildWorld(16, 16);
-    }
+    };
     // First, default world
     $scope.reset();
 
     // Toggle cell state (alive/dead)
     $scope.toggle = function(cell) {
         return cell.isAlive ? cell.isAlive = false : cell.isAlive = true;
-    }
+    };
 
     // Internal function that check world boundaries against coordinates
     function checkWorldBoundaries(x,y) {
-        if($scope.world[x] != null && $scope.world[y] != null) {
-            return true;
-        }
-        return false;
+        return $scope.world[x] != null && $scope.world[y] != null;
     }
 
     // Return number of alive neighbours
@@ -61,7 +58,7 @@ function GameOfLifeCtrl($scope, $timeout) {
             }
         }
         return neighbours;
-    }
+    };
 
     function computeWorldRules(cell) {
         var neighbours = $scope.neighbours(cell);
@@ -99,10 +96,10 @@ function GameOfLifeCtrl($scope, $timeout) {
             }
         }
 
-        for(var i=0; i<rules.length; i++) {
+        for(i=0; i<rules.length; i++) {
                rules[i].apply(null);
         }
-    }
+    };
 
     // State of 'auto-step' mode
     $scope.started = false;
@@ -112,17 +109,17 @@ function GameOfLifeCtrl($scope, $timeout) {
         if($scope.started) {
             $scope.ruleTheWorld();
         }
-        $timeout(step, 500);
-    }
+        $timeout(step, 300);
+    };
     step();
 
     // start 'auto-step' mode
     $scope.start = function() {
         $scope.started = true;
-    }
+    };
 
     // stop 'auto-step' mode
     $scope.stop = function() {
         $scope.started = false;
-    }
+    };
 }

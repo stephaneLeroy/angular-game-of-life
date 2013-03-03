@@ -1,16 +1,24 @@
+/**
+ * Game of Life stylesheet
+ * Author: Stéphane LEROY
+ * Twitter : @StphaneL
+ * Date: 02/03/13
+ * Time: 15:29
+ */
+
 .center{
     text-align: center;
 }
 .world table{
-    padding: 0px;
+    padding: 0;
     margin-left:auto;
     margin-right:auto;
-    border-spacing: 0px;
+    border-spacing: 0;
     border: 1px solid #2f4f4f;
 }
 
 .world td {
-    padding: 0px;
+    padding: 0;
     border: 1px solid #2f4f4f;
 }
 
