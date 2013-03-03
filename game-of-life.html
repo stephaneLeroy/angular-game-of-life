@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script src="js/angular.min.js"></script>
+    <script src="js/game-of-life.js"></script>
+    <link rel="stylesheet" href="css/game-of-life.css">
+    <title>Game of Life</title>
+</head>
+<body>
+    <div ng-controller="GameOfLifeCtrl" class="world">
+        <h1 class="center">Game of Life</h1>
+        <div class="center">
+            <button ng-click="ruleTheWorld()" ng-hide="started" ng-show="!started">Next Step</button>
+            <button ng-click="start()" ng-hide="started" ng-show="!started">Start</button>
+            <button ng-click="stop()" ng-hide="!started" ng-show="started">Stop</button>
+            <button ng-click="reset()">Reset</button>
+        </div>
+        <table>
+            <tr ng-repeat="rows in world">
+                <td ng-repeat="cell in rows">
+                    <span class="cell alive-{{cell.isAlive}}" ng-click="toggle(cell)" title="{{{true: 'alive', false: 'dead'}[cell.isAlive]}} ({{cell.posX}}-{{cell.posY}})"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

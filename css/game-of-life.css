@@ -1,0 +1,26 @@
+.center{
+    text-align: center;
+}
+.world table{
+    padding: 0px;
+    margin-left:auto;
+    margin-right:auto;
+    border-spacing: 0px;
+    border: 1px solid #2f4f4f;
+}
+
+.world td {
+    padding: 0px;
+    border: 1px solid #2f4f4f;
+}
+
+.cell {
+    padding: 10px;
+    display: block;
+}
+.cell.alive-false{
+    background-color: #f5f5dc;
+}
+.cell.alive-true{
+    background-color: black;
+}
